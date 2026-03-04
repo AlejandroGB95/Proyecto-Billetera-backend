@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "https://proyecto-app-billetera.vercel.app")
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api/transactions")
 public class UserController {
 
     @Autowired
