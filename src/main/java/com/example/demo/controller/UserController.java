@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "https://proyecto-app-billetera.vercel.app")
 @RestController
-@RequestMapping("/api/transactions")
+@RequestMapping("/api/users")
 public class UserController {
 
     @Autowired
