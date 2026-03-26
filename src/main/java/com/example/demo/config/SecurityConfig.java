@@ -9,6 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.security.config.Customizer;
 
 @Configuration
+@EnableWebSecurity
 public class SecurityConfig {
 
   @Bean
