@@ -9,6 +9,10 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "transactions")
 @Data
+@ManyToOne
+@JoinColumn(name = "user_id")
+@JsonBackReference
+private User user;
 public class Transaction {
 
     @Id
