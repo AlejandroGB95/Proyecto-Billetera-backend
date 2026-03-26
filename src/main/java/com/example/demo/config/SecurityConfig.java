@@ -8,6 +8,11 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.security.config.Customizer;
 
+// ESTA ES LA LÍNEA QUE FALTA:
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity; 
+import org.springframework.web.cors.CorsConfiguration;
+import java.util.List;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
