@@ -2,21 +2,17 @@ package com.example.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.ToString;
 import lombok.EqualsAndHashCode;
-import java.util.List; // Importante para que reconozca List
+import java.util.List;
 
 @Entity
 @Table(name = "users")
 @Data
-@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-@JsonManagedReference
-private List<Transaction> transactions;
 public class User {
     
     @Id
@@ -38,8 +34,8 @@ public class User {
 
     private String profilePicUrl;
 
-    // Hemos unificado todo aquí para que esté limpio
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    // Configuración vital para que el login no falle al cargar transacciones
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     @JsonIgnoreProperties("user") 
     @ToString.Exclude 
     @EqualsAndHashCode.Exclude
