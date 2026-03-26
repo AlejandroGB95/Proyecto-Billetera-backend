@@ -14,6 +14,9 @@ import java.util.List; // Importante para que reconozca List
 @Entity
 @Table(name = "users")
 @Data
+@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+@JsonManagedReference
+private List<Transaction> transactions;
 public class User {
     
     @Id
